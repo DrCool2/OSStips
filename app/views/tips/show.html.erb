@@ -1,19 +1,39 @@
 <p id="notice"><%= notice %></p>
 
+<!--
 <p>
   <strong>Title:</strong>
-  <%= @tip.title %>
+  <%# @tip.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @tip.body %>
+  <%# @tip.body %>
 </p>
 
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'Back', tips_path %>
+<%# link_to 'Edit', edit_tip_path(@tip) %> |
+-->
+<%= link_to 'All Tips', tips_path %>
 
 
 <hr>
-<%= @RandomTip.title %>
-<%= @RandomTip.body %>
+<div class="w3-card-4 border:1px">
+
+  <header class="w3-container w3-blue">
+    <h1>
+	<%= @RandomTip.title %>
+    </h1>
+  </header>
+
+ <hr>
+
+  <div class="w3-container">
+    <h3>
+	<%= @RandomTip.body %>
+    </h3>
+  </div>
+
+  <footer class="w3-container w3-blue">
+    <h5>OSS Tips by: LT Moore</h5>
+  </footer>
+</div>
