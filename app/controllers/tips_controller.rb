@@ -10,6 +10,12 @@ class TipsController < ApplicationController
   # GET /tips/1
   # GET /tips/1.json
   def show
+    random_tip = []
+    Tip.all.ids.each do |tip|
+	random_tip.push(tip)
+    end
+
+    @RandomTip = Tip.find(random_tip.sample)
   end
 
   # GET /tips/new
