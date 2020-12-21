@@ -1,33 +1,29 @@
 <p id="notice"><%= notice %></p>
-
-<h1>
   <%= content_for :title, "FSDB Public Service Announcement for the week:" %>
-</h1>
 
-<%= link_to 'Random Tip', { action: :random_tip } %>
-<%# link_to 'Edit', edit_tip_path(@tip) %> |
-<%= link_to 'All Tips', tips_path %> |
-<hr>
-
-<p>
-  <!-- <strong>Title:</strong> -->
-    <%= @RandomTip.title %>
-</p>
-
-<p>
-  <!-- <strong>Body:</strong> -->
-  <%= @RandomTip.body %>
-</p>
-
-<%# <%= link_to 'Edit', edit_tip_path(@tip) %>
-<%# <%= link_to 'All Tips', tips_path %>
-<%# <%= button_to 'Random Tip', { action: :random_tip } %>
-<!--
-<hr>
-<div class="card border-success mb" style="max-width: 75rem;">
-  <div class="card-header bg-transparent border-success"> FSDB Public Service Announcement for the week by: LT Moore </div>
-  <div class="card-body">
-	   <p class="text-danger"><%# @RandomTip.title %>
-     <p> <%# @RandomTip.body %>
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <%= link_to 'ALL', tips_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%# link_to 'Edit', edit_tip_path(@tip), class: "nav-link" %>
+        <%= link_to 'NEW', new_tip_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'RANDOM', { action: :random_tip }, class: "nav-link active" %>
+      </li>
+    </ul>
   </div>
-</div> -->
+
+  <div class="card border-danger mx-auto" style="max-width: 30rem;">
+    <div class="card-header">
+      <%= @RandomTip.title %>
+    </div>
+    <div class="card-body">
+        <%= @RandomTip.body %>
+    </div>
+  </div>
+
+</div>

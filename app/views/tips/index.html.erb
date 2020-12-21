@@ -1,32 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<%= link_to 'Random Tip', { action: :random_tip } %> |
-<%= link_to 'All Tips', tips_path %> |
-<%= link_to 'New Tip', new_tip_path %> |
-<hr>
+<%# link_to 'Random Tip', { action: :random_tip } %>
+<%# link_to 'All Tips', tips_path %>
+<%# link_to 'New Tip', new_tip_path %>
 
-<h1>Tips</h1>
+<div class="card mx-auto">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <%= link_to 'ALL', tips_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%# link_to 'Edit', edit_tip_path(@tip), class: "nav-link" %>
+        <%= link_to 'NEW', new_tip_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'RANDOM', { action: :random_tip }, class: "nav-link" %>
+      </li>
+    </ul>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Title</th>
+          <th>Body</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
 
-  <tbody>
-    <% @tips.each do |tip| %>
-      <tr>
-        <td><%= tip.title %></td>
-        <td><%= tip.body %></td>
-        <td><%= link_to 'Show', tip %></td>
-        <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
-        <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <tbody>
+        <% @tips.each do |tip| %>
+          <tr>
+            <td><%= tip.title %></td>
+            <td><%= tip.body %></td>
+            <td><%= link_to 'Show', tip %></td>
+            <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
+            <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 
-<br>
+</div>

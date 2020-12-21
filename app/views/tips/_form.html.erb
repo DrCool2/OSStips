@@ -1,3 +1,6 @@
+<p id="notice"><%= notice %></p>
+<%= content_for :title, "FSDB Public Service Announcement for the week:" %>
+
 <%= form_with(model: tip, local: true) do |form| %>
   <% if tip.errors.any? %>
     <div id="error_explanation">
@@ -11,17 +14,40 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+
+<div class="card">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <%= link_to 'ALL', tips_path, class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%# link_to 'Edit', edit_tip_path(@tip), class: "nav-link" %>
+        <%= link_to 'NEW', new_tip_path, class: "nav-link active" %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'RANDOM', { action: :random_tip }, class: "nav-link" %>
+      </li>
+    </ul>
   </div>
 
-  <div class="field">
-    <%= form.label :body %>
-    <%= form.text_field :body %>
+  <div class="card border-danger mx-auto" style="max-width: 30rem;">
+    <div class="card-header">
+      <%# @RandomTip.title %>
+      <div class="actions"> <%= form.submit %></div>
+    </div>
+    <div class="card-body">
+      <div class="field">
+         <%= form.label :title %>
+         <%= form.text_field :title %>
+      </div>
+      <div class="field">
+         <%= form.label :body %>
+         <%= form.text_area :body %>
+      </div>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+ </div>
+</div>
+
 <% end %>
