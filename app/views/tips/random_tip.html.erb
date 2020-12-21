@@ -5,18 +5,18 @@
 </h1>
 
 <%= link_to 'Random Tip', { action: :random_tip } %>
-<%= link_to 'Edit', edit_tip_path(@tip) %> |
+<%# link_to 'Edit', edit_tip_path(@tip) %> |
 <%= link_to 'All Tips', tips_path %> |
 <hr>
 
 <p>
   <strong>Title:</strong>
-  <%= @tip.title %>
+  <%= @RandomTip.title %>
 </p>
 
 <p>
   <strong>Body:</strong>
-  <%= @tip.body %>
+  <%= @RandomTip.body %>
 </p>
 
 <%# <%= link_to 'Edit', edit_tip_path(@tip) %>
