@@ -21,8 +21,9 @@
   </div>
 
   <div>
-    <table class="table">
-      <thead>
+    <table class="table table-responsive table-sm table-hover caption-top">
+      <caption>List of Tips</caption>
+      <thead class="table-dark">
         <tr>
           <th scope="col">Title</th>
           <th scope="col">Body</th>
@@ -32,9 +33,10 @@
 
       <tbody>
         <% @tips.each do |tip| %>
-          <tr>
+          <tr class="table-hover">
             <td><%= tip.title %></td>
             <td><%= tip.body %></td>
+
             <td><%= link_to 'Show', tip %></td>
             <td><%= link_to 'Edit', edit_tip_path(tip) %></td>
             <td><%= link_to 'Destroy', tip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
