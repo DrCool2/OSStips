@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
   config.hosts << "pcs0682.fsdbk12.org"
+  config.hosts << "dev-ad-onesync-01.fsdbk12.org"
 
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
