@@ -24,6 +24,9 @@
     <div class="card-body">
         <%= @RandomTip.body %>
     </div>
+    <div class="col text-center"> 
+        <%= link_to 'Generate a Random Tip', { action: :random_tip }, class: "btn btn-success" %>
+    </div>
   </div>
 
 </div>
